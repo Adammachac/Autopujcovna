@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam aut</title>
+</head>
+<body>
+    <h2>Seznam aut</h2>
+    <ul>
+        {% for auto in auta %}
+            <li>{{ auto.znacka }} {{ auto.model }} ({{ auto.rok_vyroby }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Zpět na hlavní stránku</a>
+</body>
+</html>

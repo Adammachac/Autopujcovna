@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam zákazníků</title>
+</head>
+<body>
+    <h1>Seznam zákazníků</h1>
+    <ul>
+      {% for zakaznik in zakaznici %}
+        <li>{{ zakaznik.id }} - {{ zakaznik.jmeno }} {{ zakaznik.prijmeni }}</li>
+      {% endfor %}
+    </ul>    
+    <a href="{% url 'index' %}">Zpět na hlavní stránku</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Autopůjčovna</title>
+    <link rel="stylesheet" href="./css/styles/style.css">
+</head>
+<body>
+    <p><a href="{% url 'register' %}">Registrovat se</a></p>
+
+    <h2>Seznam aut</h2>
+    <a href="{% url 'auta' %}">Zobrazit seznam aut</a>
+    <ul>
+      {% for auto in auta %}
+        <li>
+          {{ auto.znacka }} {{ auto.model }} ({{ auto.rok_vyroby }})
+          {% if auto.zakaznik %}
+            - Půjčeno: {{ auto.zakaznik.jmeno }} {{ auto.zakaznik.prijmeni }}
+          {% else %}
+            - Volné
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    
+    <h2>Seznam zákazníků</h2>
+    <a href="{% url 'zakaznici' %}">Zobrazit seznam zákazníků</a>
+    <ul>
+        {% for zakaznik in zakaznici %}
+            <li>{{ zakaznik.jmeno }} {{ zakaznik.prijmeni }} – ID: {{ zakaznik.id }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
