@@ -1,0 +1,95 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header styling */
+.zakaznici-page-title {
+    text-align: center;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* List styling */
+.zakaznici-customer-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.zakaznici-customer-item {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.zakaznici-customer-id {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.zakaznici-customer-name {
+    color: #333;
+}
+
+.zakaznici-no-customers {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* Link styling */
+.zakaznici-button {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.zakaznici-button:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .zakaznici-customer-list {
+        max-width: 90%;
+    }
+
+    .zakaznici-customer-item {
+        padding: 15px;
+    }
+
+    .zakaznici-page-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .zakaznici-page-title {
+        font-size: 1.2em;
+    }
+
+    .zakaznici-customer-item {
+        padding: 10px;
+    }
+
+    .zakaznici-button {
+        font-size: 0.9em;
+    }
+}

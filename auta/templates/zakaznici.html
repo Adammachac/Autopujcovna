@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Seznam zákazníků</title>
-</head>
-<body>
-    <h1>Seznam zákazníků</h1>
-    <ul>
-      {% for zakaznik in zakaznici %}
-        <li>{{ zakaznik.id }} - {{ zakaznik.jmeno }} {{ zakaznik.prijmeni }}</li>
-      {% endfor %}
-    </ul>    
-    <a href="{% url 'index' %}">Zpět na hlavní stránku</a>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Seznam zákazníků – AutoPůjčovna{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/stylezakaznici.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1 class="zakaznici-page-title">Seznam zákazníků</h1>
+  <ul class="zakaznici-customer-list">
+    {% for zakaznik in zakaznici %}
+      <li class="zakaznici-customer-item">
+        <strong class="zakaznici-customer-id">{{ zakaznik.id }}</strong>
+        – <span class="zakaznici-customer-name">{{ zakaznik.jmeno }} {{ zakaznik.prijmeni }}</span>
+      </li>
+    {% empty %}
+      <li class="zakaznici-no-customers">Žádní zákazníci k zobrazení.</li>
+    {% endfor %}
+  </ul>
+  <p><a class="zakaznici-button" href="{% url 'index' %}">Zpět na hlavní stránku</a></p>
+{% endblock %}

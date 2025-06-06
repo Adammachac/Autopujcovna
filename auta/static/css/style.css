@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Header (Hero Section) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.7));
+    padding: 60px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.hero-image {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* About Section */
+.about {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6c757d;
+}
+
+/* Car List Section */
+.seznam-aut {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.seznam-aut h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.seznam-aut ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.seznam-aut li {
+    font-size: 1.2rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    color: #495057;
+}
+
+.seznam-aut li:last-child {
+    border-bottom: none;
+}
+
+.seznam-aut li span {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.75rem;
+    }
+
+    .hero-image {
+        max-width: 600px;
+    }
+
+    .about h2, .seznam-aut h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .about h2, .seznam-aut h2 {
+        font-size: 1.6rem;
+    }
+
+    .seznam-aut li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .about h2, .seznam-aut h2 {
+        font-size: 1.4rem;
+    }
+
+    .seznam-aut li {
+        font-size: 0.9rem;
+    }
+}

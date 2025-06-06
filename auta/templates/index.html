@@ -1,34 +1,42 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Autopůjčovna</title>
-    <link rel="stylesheet" href="./css/styles/style.css">
-</head>
-<body>
-    <p><a href="{% url 'register' %}">Registrovat se</a></p>
+{% extends 'base.html' %}
+{% load static %}
 
-    <h2>Seznam aut</h2>
-    <a href="{% url 'auta' %}">Zobrazit seznam aut</a>
+{% block title %}Úvod | AutoPůjčovna{% endblock %}
+{% block content %}
+  <div class="hero">
+    <h1>Vítejte v AutoPůjčovně</h1>
+    <div class="hero-image">
+    <img src="{% static 'images/McLaren765lt.png' %}" alt="Luxusní sportovní vůz">
+    </div>
+    <p>Specializujeme se na moderní sportovní a luxusní vozy pro opravdový zážitek z jízdy.</p>
+    </div>
+  </div>
+
+  <section class="about">
+    <h2>O nás</h2>
+    <p>
+      Jsme autopůjčovna zaměřená na prémiový zážitek. Nabízíme výběr těch nejmodernějších
+      sportovních a luxusních vozů, které kombinují výkon, eleganci a nejnovější technologie.
+      Ať už chcete udělat dojem na obchodní schůzce nebo si jen užít nezapomenutelnou jízdu,
+      máme pro vás ten správný vůz.
+    </p>
+  </section>
+
+  <section class="seznam-aut">
+    <h2>Stav nabízených aut</h2>
     <ul>
       {% for auto in auta %}
         <li>
-          {{ auto.znacka }} {{ auto.model }} ({{ auto.rok_vyroby }})
+          {{ auto.model }} ({{ auto.rok_vyroby }})
           {% if auto.zakaznik %}
-            - Půjčeno: {{ auto.zakaznik.jmeno }} {{ auto.zakaznik.prijmeni }}
+            – Půjčeno: {{ auto.zakaznik.jmeno }} {{ auto.zakaznik.prijmeni }}
           {% else %}
-            - Volné
+            – Volné
           {% endif %}
         </li>
+      {% empty %}
+        <li>Žádná auta k dispozici.</li>
       {% endfor %}
     </ul>
-    
-    <h2>Seznam zákazníků</h2>
-    <a href="{% url 'zakaznici' %}">Zobrazit seznam zákazníků</a>
-    <ul>
-        {% for zakaznik in zakaznici %}
-            <li>{{ zakaznik.jmeno }} {{ zakaznik.prijmeni }} – ID: {{ zakaznik.id }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+  </section>
+{% endblock %}

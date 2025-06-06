@@ -1,0 +1,102 @@
+/* stylezakaznici.css */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+/* Nadpis stránky */
+.zakaznici-page-title {
+    text-align: center;
+    color: #444;
+    margin: 1.5rem 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Seznam zákazníků */
+.zakaznici-customer-list {
+    list-style-type: none;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.zakaznici-customer-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.zakaznici-customer-item:last-child {
+    border-bottom: none;
+}
+
+.zakaznici-customer-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* ID a jméno zákazníka */
+.zakaznici-customer-id {
+    font-weight: bold;
+    color: #555;
+}
+
+.zakaznici-customer-name {
+    color: #333;
+}
+
+/* Pokud nejsou zákazníci */
+.zakaznici-no-customers {
+    text-align: center;
+    color: #888;
+    padding: 1rem 1.5rem;
+}
+
+/* Tlačítko */
+.zakaznici-button {
+    display: inline-block;
+    text-align: center;
+    margin: 1.5rem auto;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    border: 1px solid #007BFF;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.zakaznici-button:hover {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 💡 Bonus: Tlačítko centrované */
+.zakaznici-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Design (jemné doladění) */
+@media (max-width: 768px) {
+    .zakaznici-customer-item {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .zakaznici-customer-item {
+        padding: 0.5rem 0.75rem;
+    }
+}

@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Seznam aut</title>
-</head>
-<body>
-    <h2>Seznam aut</h2>
-    <ul>
-        {% for auto in auta %}
-            <li>{{ auto.znacka }} {{ auto.model }} ({{ auto.rok_vyroby }})</li>
-        {% endfor %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Seznam aut – AutoPůjčovna{% endblock %}
+
+{% block extra_css %}
+  <!-- Speciální CSS jen pro tuto stránku: -->
+  <link rel="stylesheet" href="{% static 'css/styleauta.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="auta-container">
+    <h2 class="auta-page-title">Seznam aut</h2>
+    <ul class="auta-car-list">
+      {% for auto in auta %}
+        <li class="auta-car-item">
+          {{ auto.znacka }} {{ auto.model }} ({{ auto.rok_vyroby }})
+          {% if auto.zakaznik %}
+            – Půjčeno: {{ auto.zakaznik.jmeno }} {{ auto.zakaznik.prijmeni }}
+          {% else %}
+            – <em>Volné</em>
+          {% endif %}
+        </li>
+      {% empty %}
+        <li class="auta-no-cars">Žádná auta k zobrazení.</li>
+      {% endfor %}
     </ul>
-    <a href="{% url 'index' %}">Zpět na hlavní stránku</a>
-</body>
-</html>
+    <p><a class="auta-button" href="{% url 'index' %}">Zpět na hlavní stránku</a></p>
+  </div>
+{% endblock %}

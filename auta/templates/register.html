@@ -1,28 +1,26 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Registrace zákazníka</title>
-    <link rel="stylesheet" href="{% static 'css/styles/style.css' %}">
-</head>
-<body>
-    <h2>Registrace nového zákazníka</h2>
 
-    {% if messages %}
-      <ul>
-        {% for msg in messages %}
-          <li>{{ msg }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+{% block title %}Registrace zákazníka – AutoPůjčovna{% endblock %}
 
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Registrovat zákazníka</button>
-    </form>
+  <link rel="stylesheet" href="{% static 'css/styleregister.css' %}">
 
-    <p><a href="{% url 'index' %}">Zpět na úvod</a></p>
-</body>
-</html>
+{% block content %}
+  <h2 class="register-page-title">Registrace nového zákazníka</h2>
+
+  {% if messages %}
+    <ul class="register-messages">
+      {% for msg in messages %}
+        <li class="register-message-item">{{ msg }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post" class="register-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="register-button">Registrovat zákazníka</button>
+  </form>
+
+  <p><a class="register-button-secondary" href="{% url 'index' %}">Zpět na úvod</a></p>
+{% endblock %}

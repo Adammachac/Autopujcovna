@@ -1,0 +1,124 @@
+/* styleregister.css */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Heading styles */
+.register-page-title {
+    text-align: center;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Form styles */
+.register-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-form p {
+    margin-bottom: 15px;
+}
+
+.register-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.register-form input, 
+.register-form select, 
+.register-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+.register-button-secondary {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.register-button-secondary:hover {
+    text-decoration: underline;
+}
+
+/* Messages styles */
+.register-messages {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #ffdddd;
+    border: 1px solid #ff5c5c;
+    border-radius: 5px;
+    list-style-type: none;
+}
+
+.register-message-item {
+    color: #d8000c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .register-form {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .register-messages {
+        max-width: 90%;
+    }
+
+    .register-page-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-form {
+        padding: 10px;
+    }
+
+    .register-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .register-page-title {
+        font-size: 1.2em;
+    }
+}
